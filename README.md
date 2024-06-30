@@ -1,2 +1,2 @@
 # Animated-About-Us-Page
-![alt text](preview.png)
+![alt text](Images/preview.png)
