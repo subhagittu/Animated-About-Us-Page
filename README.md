@@ -1,2 +1,2 @@
-# Animated-About-Us-Page
-![alt text](preview.png)
+# Lensify About Page
+![alt text](Images/preview.png)
