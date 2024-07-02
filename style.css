@@ -688,7 +688,7 @@ a {
   display: flex;
   align-items: center;
   position: absolute;
-  pointer-events: none;
+  pointer-events: auto; /* Change to auto to enable hover */
   user-select: none;
   top: 50%;
   right: 0;
@@ -699,6 +699,7 @@ a {
   padding-right: 40px;
   float: left;
   margin: 10px;
+  perspective: 1000px; /* Add perspective for 3D effect */
 }
 @media screen and (max-width: 992px) {
   .product-img__item {
@@ -720,15 +721,27 @@ a {
 
 @keyframes floatAnimation {
   0% {
-    transform: translateY(-50%) translateY(0);
+    transform: translateY(-50%) translateY(0) rotate(0deg);
   }
   100% {
-    transform: translateY(-50%) translateY(40px);
+    transform: translateY(-50%) translateY(40px) rotate(2deg);
   }
 }
 
 .product-img__item img {
   object-fit: contain;
   object-position: center right;
+  transition: transform 0.3s ease; /* Add transition for smooth tilt */
 }
 
+.product-img__item:hover img {
+  transform: rotateX(17deg) rotateY(-17deg);
+}
+
+.product-img__item:hover:nth-child(even) img {
+  transform: rotateX(-17deg) rotateY(17deg);
+}
+
+.product-img__item:hover:active img {
+  transform: rotateX(17deg) rotateY(-17deg) scale(1.05);
+}
